@@ -29,14 +29,6 @@ app.use(methodOverride('_method'));
 app.use ('/main', mainController);
 
 //___________________
-//////////////// Routes //////////////////
-//___________________
-//localhost:3000
-// app.get('/main' , (req, res) => {
-//   res.send('HI THERE!!');
-// });
-
-//___________________
 ////////////////// Port ///////////////////
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment

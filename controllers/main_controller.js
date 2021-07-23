@@ -6,8 +6,15 @@ const main = express.Router();
 //////////////// Routes //////////////////
 //___________________
 //localhost:3000
-main.get('/' , (req, res) => {
-  res.send('HI THERE!!');
-});
+
+///// test route (/main) /////
+// main.get('/' , (req, res) => {
+//   res.send('HI THERE!!');
+// });
+
+///// new route /////
+main.get('/new', (req, res) => {
+    res.render('new.ejs');
+})
 
 module.exports = main

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <h1>New Post Page</h1>
+    <form action="/main" method="POST">
+        Title: <input type="text" name="title" /><br />
+        Img: <input type="url" name="img" /><br />
+        Thoughts: <input type="text" name="thoughts"><br />
+    </form>
+</body>
+</html>
