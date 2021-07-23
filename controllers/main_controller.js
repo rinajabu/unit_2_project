@@ -1,5 +1,6 @@
 const express = require('express');
 const main = express.Router();
+const Post = require('../models/posts.js');
 
 
 //___________________
@@ -15,6 +16,13 @@ const main = express.Router();
 ///// new route /////
 main.get('/new', (req, res) => {
     res.render('new.ejs');
+})
+
+///// create route /////
+main.post('/', (req, res) => {
+    Post.create(req.body, (err, createdPost) => {
+        res.send(createdPost);
+    })
 })
 
 module.exports = main
