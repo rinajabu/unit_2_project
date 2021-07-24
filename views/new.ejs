@@ -4,7 +4,10 @@
     <%- include('./partials/head.ejs') %>
 </head>
 <body>
-    <h1>New Post Page</h1>
+    <nav>
+        <%- include('./partials/nav.ejs') %>
+    </nav>
+    <h2>New Post Page</h2>
     <form action="/main" method="POST">
         Title: <input type="text" name="title" /><br />
         Img: <input type="url" name="img" /><br />

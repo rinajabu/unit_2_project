@@ -21,7 +21,19 @@ main.get('/new', (req, res) => {
 ///// create route /////
 main.post('/', (req, res) => {
     Post.create(req.body, (err, createdPost) => {
-        res.send(createdPost);
+        res.redirect('/main');
+    })
+})
+
+///// index route /////
+main.get('/', (req, res) => {
+    Post.find({}, (err, allPosts) => {
+        res.render(
+            'index.ejs',
+            {
+                posts: allPosts
+            }
+        );
     })
 })
 

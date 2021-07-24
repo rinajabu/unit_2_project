@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <nav>
+        <%- include('./partials/nav.ejs') %>
+    </nav>
+    <% for (let i = 0; i < posts.length; i++) { %>
+    <div>
+        <h2>
+            <%=posts[i].title%>
+        </h2>
+        <img src="<%=posts[i].img%>" alt="picture of post titled <%=posts[i].title%>">
+        <p>
+            <%=posts[i].thoughts%>
+        </p>
+    </div>
+    <% } %>
+</body>
+</html>
