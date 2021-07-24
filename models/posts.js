@@ -4,7 +4,8 @@ const postSchema = new mongoose.Schema(
     {
         title: { type: String, required: true },
         img: String,
-        thoughts: String
+        thoughts: String,
+        views: { type: Number, default: 0}
     },
     { timestamps: true }
 )
