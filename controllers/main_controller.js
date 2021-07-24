@@ -32,13 +32,19 @@ main.get('/', (req, res) => {
 
 ///// show route /////
 main.get('/:id', (req, res) => {
+    // console.log(req.params.id);
+    // foundPost.views = foundPost.views + 1;
+    req.params.views += 1;
     Post.findById(req.params.id, (err, foundPost) => {
+        // console.log(foundPost.views += 1);
         res.render(
             'show.ejs',
             {
                 post: foundPost
             }
         );
+        // console.log(viewCount);
+        // console.log(views);
     })
 })
 
@@ -73,6 +79,47 @@ main.delete('/:id', (req, res) => {
     Post.findByIdAndRemove(req.params.id, (err, foundPost) => {
         res.redirect('/main');
     })
+})
+
+///// seed route /////
+main.get('/plant/some/seeds', (req, res) => {
+    Post.create(
+        [
+            {
+                title: 'Test 1',
+                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                thoughts: 'test test test test test test test test test test test test',
+                views: 0,
+            },
+            {
+                title: 'Test 2',
+                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                thoughts: 'test test test test test test test test test test test test',
+                views: 0,
+            },
+            {
+                title: 'Test 3',
+                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                thoughts: 'test test test test test test test test test test test test',
+                views: 0,
+            },
+            {
+                title: 'Test 4',
+                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                thoughts: 'test test test test test test test test test test test test',
+                views: 0,
+            },
+            {
+                title: 'Test 5',
+                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                thoughts: 'test test test test test test test test test test test test',
+                views: 0,
+            },
+        ],
+        (err, data) => {
+            res.redirect('/main');
+        }
+    )
 })
 
 module.exports = main
