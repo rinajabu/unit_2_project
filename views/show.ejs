@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <nav>
+        <%- include('./partials/nav.ejs') %>
+    </nav>
+    <h1>
+        <%=post.title%>
+    </h1>
+    <p>
+        Memory made on: <%=post.createdAt.toDateString()%>
+    </p>
+    <img src="<%=post.img%>" alt="picture of post titled <%=post.title%>">
+    <p>
+        <%=post.thoughts%>
+    </p>
+</body>
+</html>

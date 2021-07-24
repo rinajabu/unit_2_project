@@ -37,4 +37,16 @@ main.get('/', (req, res) => {
     })
 })
 
+///// show route /////
+main.get('/:id', (req, res) => {
+    Post.findById(req.params.id, (err, foundPost) => {
+        res.render(
+            'show.ejs',
+            {
+                post: foundPost
+            }
+        );
+    })
+})
+
 module.exports = main

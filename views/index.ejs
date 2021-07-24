@@ -10,11 +10,12 @@
     <% for (let i = 0; i < posts.length; i++) { %>
     <div>
         <h2>
-            <%=posts[i].title%>
+            <a href="/main/<%=posts[i].id%>">
+                <%=posts[i].title%>
+            </a>
         </h2>
-        <img src="<%=posts[i].img%>" alt="picture of post titled <%=posts[i].title%>">
         <p>
-            <%=posts[i].thoughts%>
+            <%=posts[i].createdAt.toDateString()%>
         </p>
     </div>
     <% } %>
