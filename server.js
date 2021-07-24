@@ -6,7 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-require('dotenv').config()
+require('dotenv').config();
+const session = require('express-session');
 
 ///////////////// CONTROLLER DEPENDENCIES ////////////////
 const mainController = require('./controllers/main_controller.js');
@@ -25,6 +26,16 @@ app.use(express.static('public'));
 app.use(express.json());
 // allow POST, PUT and DELETE from a form
 app.use(methodOverride('_method'));
+// express session middleware
+app.use(
+    session(
+        {
+            secret: process.env.SECRET,
+            resave: false,
+            saveUninitialized: false
+        }
+    )
+);
 
 //////////////////// CONTROLLERS ////////////////////////
 app.use ('/main', mainController);
