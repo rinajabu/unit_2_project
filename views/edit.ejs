@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <nav>
+        <%- include('./partials/nav.ejs') %>
+    </nav>
+    <h1>Edit Page</h1>
+    <form action="/main/<%=post.id%>?_method=PUT" method="POST">
+        Title: <input type="text" name="title" value="<%=post.title%>" /><br />
+        Img: <input type="url" name="img" value="<%=post.img%>" /><br />
+        <!-- ADD SMALL IMG "PREVIEW HERE" -->
+        Thoughts: <input type="text" name="thoughts" value="<%=post.thoughts%>" ><br />
+        <input type="submit" value="Edit Memory">
+    </form>
+</body>
+</html>

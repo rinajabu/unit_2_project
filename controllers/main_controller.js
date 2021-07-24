@@ -42,6 +42,25 @@ main.get('/:id', (req, res) => {
     })
 })
 
+///// edit route /////
+main.get('/:id/edit', (req, res) => {
+    Post.findById(req.params.id, (err, foundPost) => {
+        res.render(
+            'edit.ejs',
+            {
+                post: foundPost
+            }
+        )
+    })
+})
+
+///// put route /////
+main.put('/:id', (req, res) => {
+    Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost) => {
+        res.redirect('/main');
+    })
+})
+
 ///// create route /////
 main.post('/', (req, res) => {
     Post.create(req.body, (err, createdPost) => {
