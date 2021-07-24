@@ -34,7 +34,8 @@ main.get('/', (req, res) => {
 main.get('/:id', (req, res) => {
     // console.log(req.params.id);
     // foundPost.views = foundPost.views + 1;
-    req.params.views += 1;
+    // req.params.views += 1;
+    //  POSSIBLY ADD A Post.findByIdAndUpdate here and updated view count first?
     Post.findById(req.params.id, (err, foundPost) => {
         // console.log(foundPost.views += 1);
         res.render(

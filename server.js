@@ -10,6 +10,7 @@ require('dotenv').config()
 
 ///////////////// CONTROLLER DEPENDENCIES ////////////////
 const mainController = require('./controllers/main_controller.js');
+const usersController = require('./controllers/users_controller.js');
 
 //___________________
 ///////////////// Middleware //////////////////
@@ -27,6 +28,7 @@ app.use(methodOverride('_method'));
 
 //////////////////// CONTROLLERS ////////////////////////
 app.use ('/main', mainController);
+app.use('/users', usersController);
 
 //___________________
 ////////////////// Port ///////////////////
