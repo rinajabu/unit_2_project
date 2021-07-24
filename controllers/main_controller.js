@@ -18,13 +18,6 @@ main.get('/new', (req, res) => {
     res.render('new.ejs');
 })
 
-///// create route /////
-main.post('/', (req, res) => {
-    Post.create(req.body, (err, createdPost) => {
-        res.redirect('/main');
-    })
-})
-
 ///// index route /////
 main.get('/', (req, res) => {
     Post.find({}, (err, allPosts) => {
@@ -46,6 +39,20 @@ main.get('/:id', (req, res) => {
                 post: foundPost
             }
         );
+    })
+})
+
+///// create route /////
+main.post('/', (req, res) => {
+    Post.create(req.body, (err, createdPost) => {
+        res.redirect('/main');
+    })
+})
+
+///// delete route /////
+main.delete('/:id', (req, res) => {
+    Post.findByIdAndRemove(req.params.id, (err, foundPost) => {
+        res.redirect('/main');
     })
 })
 

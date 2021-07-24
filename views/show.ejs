@@ -17,5 +17,9 @@
     <p>
         <%=post.thoughts%>
     </p>
+    <!-- delete button; possibly have warning box pop up? -->
+    <form action="/main/<%=post.id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
+    </form>
 </body>
 </html>
