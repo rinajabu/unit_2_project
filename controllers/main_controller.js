@@ -81,7 +81,7 @@ main.get('/:id/edit', authenticated, (req, res) => {
 ///// put route /////
 main.put('/:id', (req, res) => {
     Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost) => {
-        res.redirect('/main');
+        res.redirect(`/main/${req.params.id}`);
     })
 })
 
@@ -106,31 +106,31 @@ main.get('/plant/some/seeds', (req, res) => {
             {
                 title: 'Test 1',
                 img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
-                thoughts: 'test test test test test test test test test test test test',
+                thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
             {
                 title: 'Test 2',
                 img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
-                thoughts: 'test test test test test test test test test test test test',
+                thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
             {
                 title: 'Test 3',
                 img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
-                thoughts: 'test test test test test test test test test test test test',
+                thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
             {
                 title: 'Test 4',
                 img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
-                thoughts: 'test test test test test test test test test test test test',
+                thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
             {
                 title: 'Test 5',
                 img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
-                thoughts: 'test test test test test test test test test test test test',
+                thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
         ],

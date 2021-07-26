@@ -1,11 +1,13 @@
 body {
     font-family: 'Lora', serif;
-    background-color: #ffe3c5;
+    background-color: #f2f5f7;
 }
 
 #form-container {
     width: 60%;
 }
+
+/*//////////////// INDEX PAGE STYLING ////////////////*/
 
 .index-div {
     display: flex;
@@ -16,7 +18,7 @@ body {
     padding: 1em;
     border: 5px solid white;
     border-radius: 5px;
-    box-shadow: 5px 5px 8px #29586c;
+    box-shadow: 0 0 10px black;
     background: #29586c;
     color: white;
 }
@@ -35,4 +37,28 @@ body {
 
 .index-info h2, .index-info p {
     margin: 0;
+}
+
+/*//////////////// SHOW PAGE STYLING ////////////////*/
+
+.show-div {
+    width: 75%;
+    margin: 2em auto;
+    padding: 1em;
+    border: 3px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    background: #29586c;
+    color: white;
+}
+
+.show-img {
+    width: 75%;
+    margin: 0 auto 1em;
+    display: block;
+}
+
+.show-btns {
+    display: flex;
+    justify-content: center;
 }

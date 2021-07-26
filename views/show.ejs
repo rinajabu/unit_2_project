@@ -7,23 +7,30 @@
     <nav>
         <%- include('./partials/nav.ejs') %>
     </nav>
-    <h1>
-        <%=post.title%>
-    </h1>
-    <p>
-        Memory made on: <%=post.createdAt.toDateString()%>
-    </p>
-    <p>
-        Viewed: <%=post.views%>
-    </p>
-    <img src="<%=post.img%>" alt="picture of post titled <%=post.title%>">
-    <p>
-        <%=post.thoughts%>
-    </p>
-    <a href="/main/<%=post.id%>/edit">EDIT</a>
-    <!-- delete button; possibly have warning box pop up? -->
-    <form action="/main/<%=post.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE">
-    </form>
+    <div class="show-div">
+        <h1 class="text-center">
+            <%=post.title%>
+        </h1>
+        <p class="text-center">
+            Memory made on: <%=post.createdAt.toDateString()%>
+        </p>
+        <p class="text-center">
+            Viewed: <%=post.views%>
+        </p>
+        <img class="show-img" src="<%=post.img%>" alt="picture of post titled <%=post.title%>">
+        <p class="text-center fs-5">
+            <%=post.thoughts%>
+        </p>
+        <div class="show-btns">
+            <!-- home button -->
+            <a class="mx-3 btn btn-success" href="/main">Home</a>
+            <!-- edit button -->
+            <a class=" mx-3 btn btn-primary" href="/main/<%=post.id%>/edit">Edit</a>
+            <!-- delete button; possibly have warning box pop up? -->
+            <form action="/main/<%=post.id%>?_method=DELETE" method="POST">
+                <input class="mx-3 btn btn-danger" type="submit" value="Delete">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
