@@ -15,7 +15,12 @@ const Post = require('../models/posts.js');
 
 ///// new route /////
 main.get('/new', (req, res) => {
-    res.render('new.ejs');
+    res.render(
+        'new.ejs',
+        {
+            currentUser: req.session.currentUser
+        }    
+    );
 })
 
 ///// index route /////
@@ -24,7 +29,8 @@ main.get('/', (req, res) => {
         res.render(
             'index.ejs',
             {
-                posts: allPosts
+                posts: allPosts,
+                currentUser: req.session.currentUser
             }
         );
     })
@@ -41,7 +47,8 @@ main.get('/:id', (req, res) => {
         res.render(
             'show.ejs',
             {
-                post: foundPost
+                post: foundPost,
+                currentUser: req.session.currentUser
             }
         );
         // console.log(viewCount);
@@ -55,7 +62,8 @@ main.get('/:id/edit', (req, res) => {
         res.render(
             'edit.ejs',
             {
-                post: foundPost
+                post: foundPost,
+                currentUser: req.session.currentUser
             }
         )
     })
