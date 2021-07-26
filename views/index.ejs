@@ -9,7 +9,7 @@
     </nav>
     <% for (let i = 0; i < posts.length; i++) { %>
     <div class="index-div">
-        <div class="index-img">
+        <div class="index-img-div">
             <img class="index-img img-thumbnail" src="<%=posts[i].img%>" alt="picture of post titled <%=posts[i].title%>">
         </div>
         <div class="index-info">
@@ -22,20 +22,13 @@
             <p>
                 Viewed: <%=posts[i].views%>
             </p>
-            <div class="view-memory-div">
-                <a href="/main/<%=posts[i].id%>">
-                    <input class="btn btn-primary" type="button" value="View Memory">
-                </a>
-            </div>
+        </div>
+        <div class="view-memory-div">
+            <a href="/main/<%=posts[i].id%>">
+                <input class="btn btn-primary" type="button" value="View Memory">
+            </a>
         </div>
     </div>
     <% } %>
 </body>
-<!-- <script>
-    // console.log($(posts[0].views));
-    $('.btn').on('click', (event) => {
-        event.preventDefault();
-        console.log('clicked');
-    })
-</script> -->
 </html>
