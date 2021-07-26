@@ -1,14 +1,16 @@
-<h1>Memory Lane</h1>
-<a href="/main">Home</a>
-<% if (currentUser) { %>
-    <a href="/main/new">New Memory</a>
-    <p>
-        Welcome, <%=currentUser.username%>!
-    </p>
-    <form action="/sessions?_method=DELETE" method="POST">
-        <input type="submit" value="LOG OUT" />
-    </form>
-<% } else { %>
-<a href="/users/new">Sign Up</a>
-<a href="/sessions/new">Log In</a>
-<% } %>
+<nav class="mb-3 p-3 navbar sticky-top navbar-light justify-content-around" style="background-color: #89bdd6;">
+    <h1>Memory Lane</h1>
+    <a class="navbar-brand" href="/main">Home</a>
+    <% if (currentUser) { %>
+        <a class="navbar-brand" href="/main/new">New Memory</a>
+        <p>
+            Welcome, <%=currentUser.username%>!
+        </p>
+        <form action="/sessions?_method=DELETE" method="POST">
+            <input class="btn btn-secondary" type="submit" value="LOG OUT" />
+        </form>
+    <% } else { %>
+    <a class="navbar-brand" href="/users/new">Sign Up</a>
+    <a class="navbar-brand" href="/sessions/new">Log In</a>
+    <% } %>
+</nav>
