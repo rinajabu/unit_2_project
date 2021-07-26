@@ -47,12 +47,7 @@ main.get('/', authenticated, (req, res) => {
 
 ///// show route /////
 main.get('/:id', authenticated, (req, res) => {
-    // console.log(req.params.id);
-    // foundPost.views = foundPost.views + 1;
-    // req.params.views += 1;
-    //  POSSIBLY ADD A Post.findByIdAndUpdate here and updated view count first?
     Post.findById(req.params.id, (err, foundPost) => {
-        // console.log(foundPost.views += 1);
         res.render(
             'show.ejs',
             {
@@ -60,8 +55,6 @@ main.get('/:id', authenticated, (req, res) => {
                 currentUser: req.session.currentUser
             }
         );
-        // console.log(viewCount);
-        // console.log(views);
     })
 })
 
@@ -77,6 +70,22 @@ main.get('/:id/edit', authenticated, (req, res) => {
         )
     })
 })
+
+///// view count route /////
+main.get('/:id/:views', authenticated, (req, res) => {
+    // console.log(req.params.id);
+    Post.findByIdAndUpdate(req.params.id, { $inc: {views: 1} }, { new: true }, (err, foundPost) => {
+        console.log(foundPost);
+        res.render(
+            'show.ejs',
+            {
+                post: foundPost,
+                currentUser: req.session.currentUser
+            }
+        );
+    })
+})
+
 
 ///// put route /////
 main.put('/:id', (req, res) => {
