@@ -7,12 +7,22 @@
     <nav>
         <%- include('./partials/nav.ejs') %>
     </nav>
-    <h1>Edit Page</h1>
-    <form action="/main/<%=post.id%>?_method=PUT" method="POST">
-        Title: <input type="text" name="title" value="<%=post.title%>" /><br />
-        Img: <input type="url" name="img" value="<%=post.img%>" /><br />
-        <!-- ADD SMALL IMG "PREVIEW HERE" -->
-        Thoughts: <input type="text" name="thoughts" value="<%=post.thoughts%>" ><br />
+    <h2 class="mb-4 text-center">Edit Memory</h2>
+    <form id="form-container" class="mb-4 container" action="/main/<%=post.id%>?_method=PUT" method="POST">
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="title">Title</label>
+            <input class="form-control" id="colFormLabel" type="text" name="title" value="<%=post.title%>" required/>
+        </div>
+        <p>Current Image Preview</p>
+        <img class="edit-img" src="<%=post.img%>" alt="picture of <%=post.title%>"><br />
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="img">Image URL</label>
+            <input class="form-control" id="colFormLabel" type="url" name="img" value="<%=post.img%>" required/>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="thoughts">Thoughts</label>
+            <textarea class="form-control" id="colFormLabel" name="thoughts" cols="30" rows="10" required><%=post.thoughts%></textarea>
+        </div>
         <input type="submit" value="Edit Memory">
     </form>
 </body>
