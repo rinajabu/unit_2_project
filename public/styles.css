@@ -1,3 +1,38 @@
 body {
     font-family: 'Lora', serif;
+    background-color: #ffe3c5;
+}
+
+#form-container {
+    width: 60%;
+}
+
+.index-div {
+    display: flex;
+    width: 55%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2em auto;
+    padding: 1em;
+    border: 5px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px #29586c;
+    background: #29586c;
+    color: white;
+}
+
+.index-img {
+    width: 200px;
+    height: 200px;
+}
+
+.index-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.index-info h2, .index-info p {
+    margin: 0;
 }

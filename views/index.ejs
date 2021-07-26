@@ -8,18 +8,26 @@
         <%- include('./partials/nav.ejs') %>
     </nav>
     <% for (let i = 0; i < posts.length; i++) { %>
-    <div>
-        <h2>
-            <a href="/main/<%=posts[i].id%>">
+    <div class="index-div">
+        <div class="index-img">
+            <img class="index-img img-thumbnail" src="<%=posts[i].img%>" alt="picture of post titled <%=posts[i].title%>">
+        </div>
+        <div class="index-info">
+            <h2>
                 <%=posts[i].title%>
-            </a>
-        </h2>
-        <p>
-            <%=posts[i].createdAt.toDateString()%>
-        </p>
-        <p>
-            Viewed: <%=posts[i].views%>
-        </p>
+            </h2>
+            <p>
+                <%=posts[i].createdAt.toDateString()%>
+            </p>
+            <p>
+                Viewed: <%=posts[i].views%>
+            </p>
+            <div class="view-memory-div">
+                <a href="/main/<%=posts[i].id%>">
+                    <button class="btn btn-primary">View Memory</button> 
+                </a>
+            </div>
+        </div>
     </div>
     <% } %>
 </body>
