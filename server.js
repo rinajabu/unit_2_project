@@ -12,6 +12,7 @@ const session = require('express-session');
 ///////////////// CONTROLLER DEPENDENCIES ////////////////
 const mainController = require('./controllers/main_controller.js');
 const usersController = require('./controllers/users_controller.js');
+const sessionsController = require('./controllers/sessions_controller.js');
 
 //___________________
 ///////////////// Middleware //////////////////
@@ -40,6 +41,7 @@ app.use(
 //////////////////// CONTROLLERS ////////////////////////
 app.use ('/main', mainController);
 app.use('/users', usersController);
+app.use('/sessions', sessionsController);
 
 //___________________
 ////////////////// Port ///////////////////
