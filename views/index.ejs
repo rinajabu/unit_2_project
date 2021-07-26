@@ -24,11 +24,18 @@
             </p>
             <div class="view-memory-div">
                 <a href="/main/<%=posts[i].id%>">
-                    <button class="btn btn-primary">View Memory</button> 
+                    <input class="btn btn-primary" type="button" value="View Memory">
                 </a>
             </div>
         </div>
     </div>
     <% } %>
 </body>
+<!-- <script>
+    // console.log($(posts[0].views));
+    $('.btn').on('click', (event) => {
+        event.preventDefault();
+        console.log('clicked');
+    })
+</script> -->
 </html>

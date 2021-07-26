@@ -7,11 +7,21 @@
     <nav>
         <%- include('./partials/nav.ejs') %>
     </nav>
-    <h2>Create New Memory</h2>
-    <form action="/main" method="POST">
-        Title: <input type="text" name="title" /><br />
-        Img: <input type="url" name="img" /><br />
-        Thoughts: <input type="text" name="thoughts"><br />
+    <h2 class="mb-4 text-center">Create New Memory</h2>
+    <form id="form-container" class="container" action="/main" method="POST">
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="title">Title</label>
+            <input class="form-control" id="colFormLabel" type="text" name="title" required/>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="img">Image</label>
+            <input class="form-control" id="colFormLabel" type="url" name="img" required/>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="thoughts">Thoughts</label>
+            <textarea class="form-control" id="colFormLabel" name="thoughts" cols="30" rows="10"></textarea>
+            <!-- <input class="form-control" id="colFormLabel" type="text" name="thoughts" required/> -->
+        </div>
         <input type="submit" value="Make Memory">
     </form>
 </body>
