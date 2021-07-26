@@ -2,6 +2,15 @@ const express = require('express');
 const main = express.Router();
 const Post = require('../models/posts.js');
 
+//////////////// Middleware /////////////////
+///// authentication /////
+const authenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+        return next();
+    } else {
+        res.redirect('/sessions/new');
+    }
+}
 
 //___________________
 //////////////// Routes //////////////////
@@ -14,7 +23,7 @@ const Post = require('../models/posts.js');
 // });
 
 ///// new route /////
-main.get('/new', (req, res) => {
+main.get('/new', authenticated, (req, res) => {
     res.render(
         'new.ejs',
         {
@@ -24,7 +33,7 @@ main.get('/new', (req, res) => {
 })
 
 ///// index route /////
-main.get('/', (req, res) => {
+main.get('/', authenticated, (req, res) => {
     Post.find({}, (err, allPosts) => {
         res.render(
             'index.ejs',
@@ -37,7 +46,7 @@ main.get('/', (req, res) => {
 })
 
 ///// show route /////
-main.get('/:id', (req, res) => {
+main.get('/:id', authenticated, (req, res) => {
     // console.log(req.params.id);
     // foundPost.views = foundPost.views + 1;
     // req.params.views += 1;
@@ -57,7 +66,7 @@ main.get('/:id', (req, res) => {
 })
 
 ///// edit route /////
-main.get('/:id/edit', (req, res) => {
+main.get('/:id/edit', authenticated, (req, res) => {
     Post.findById(req.params.id, (err, foundPost) => {
         res.render(
             'edit.ejs',
