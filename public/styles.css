@@ -43,6 +43,10 @@ textarea {
     margin: 0;
 }
 
+.view-memory-div {
+        margin: auto 0;
+}
+
 /*//////////////// SHOW PAGE STYLING ////////////////*/
 
 .show-div {

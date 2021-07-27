@@ -113,32 +113,20 @@ main.get('/plant/some/seeds', (req, res) => {
     Post.create(
         [
             {
-                title: 'Test 1',
-                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                title: 'Beautiful day at the beach',
+                img: 'https://c.shld.net/rpx/i/s/i/spin/image/spin_prod_159492601?',
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
             {
-                title: 'Test 2',
-                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                title: 'Hiked an awesome trail',
+                img: 'https://s27363.pcdn.co/wp-content/uploads/2019/10/Landmannalaugar.jpg.optimal.jpg',
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
             {
-                title: 'Test 3',
-                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
-                thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
-                views: 0,
-            },
-            {
-                title: 'Test 4',
-                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
-                thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
-                views: 0,
-            },
-            {
-                title: 'Test 5',
-                img: 'https://i.insider.com/59b7fe7a9803c51d008b4bfe?width=700',
+                title: 'Went skydiving for the first time!',
+                img: 'https://www.wellandgood.com/wp-content/uploads/2018/01/maria-fernanda-gonzalez-unsplash.jpg',
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
             },
