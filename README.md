@@ -24,4 +24,7 @@ Approach taken:
 - 7 RESTFUL routes with full CRUD
 - MVC file structure (Models, Views, Controllers)
 
+Things to Work On:
+- currently working through 'one-to-many' relationships additional lecture notes
+
 
