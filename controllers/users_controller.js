@@ -12,15 +12,23 @@ users.get('/new', (req, res) => {
     );
 })
 
+// could not get existing username check to function properly
 users.post('/', (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-    User.create(req.body, (err, createdUser) => {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log('===user is created===', createdUser);
-            res.redirect('/main');
-        }
+    User.findOne({username: req.body.username}, (err, foundUsername) => {
+        User.create(req.body, (err, createdUser) => {
+            console.log(foundUsername);
+            if (err) {
+                console.log(err);
+            } else if (foundUsername) {
+                alert('username exists');
+                // res.redirect('/main')
+                // res.send('<a href="/main">Sorry, username taken. Click to return.</a>');
+            } else {
+                console.log('===user is created===', createdUser);
+                res.redirect('/main');
+            }
+        })
     })
 })
 

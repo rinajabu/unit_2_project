@@ -13,12 +13,13 @@ sessions.get('/new', (req, res) => {
 })
 
 sessions.post('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     User.findOne(
         {
             username: req.body.username
         },
         (err, foundUser) => {
+            // console.log(foundUser);
             if (err) {
                 console.log(err);
             } else if (!foundUser) {

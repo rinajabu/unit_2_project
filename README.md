@@ -26,5 +26,6 @@ Approach taken:
 
 Things to Work On:
 - currently working through 'one-to-many' relationships additional lecture notes
+- attmepting to check for existing username when user tries to sign up for first time
 
 
