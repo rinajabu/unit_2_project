@@ -23,13 +23,13 @@ sessions.post('/', (req, res) => {
             if (err) {
                 console.log(err);
             } else if (!foundUser) {
-                res.send('<a href="/main">Sorry, no user found. Click to return.</a>');
+                res.send('<h2><a href="/main">Sorry, no user found. Click to return to login page.</a></h2>');
             } else {
                 if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                     req.session.currentUser = foundUser;
                     res.redirect('/main')
                 } else {
-                    res.send('<a href="/main">Password does not match. Click to return.</a>')
+                    res.send('<h2><a href="/main">Password does not match. Click to return to login page.</a></h2>');
                 }
             }
         }

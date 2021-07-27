@@ -25,7 +25,10 @@ Approach taken:
 - MVC file structure (Models, Views, Controllers)
 
 Things to Work On:
-- currently working through 'one-to-many' relationships additional lecture notes
-- attmepting to check for existing username when user tries to sign up for first time
+- currently working through 'one-to-many' relationships additional lecture notes (not able to implement at this time)
+- able to get view count to increase on each post 'view memory' click
+    - made a separate route that acts as both a show route and a put route, it shows the posts description and also adds one to the view property at the same time
+- attempting to check for existing username when user tries to sign up for first time
+    - got the check for existing username to work!; had to comment out the initial if statement giving me the error message, to get the foundUsername message to pop up
 
 
