@@ -1,0 +1,16 @@
+<script>
+// sticky nav functionality
+const $navbar = $('#navbar');
+const $sticky = $navbar.offset().top;
+console.log($sticky);
+console.log($(window).scrollTop());
+
+// window on scroll listener to make nav sticky
+$(window).on('scroll', () => {
+    if ($(window).scrollTop() >= $sticky) {
+        $navbar.addClass("sticky");
+    } else {
+        $navbar.removeClass("sticky");
+    }
+})
+</script>

@@ -11,6 +11,14 @@ textarea {
     resize: none;
 }
 
+/* sticky nav */
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 /*//////////////// INDEX PAGE STYLING ////////////////*/
 
 .index-div {
