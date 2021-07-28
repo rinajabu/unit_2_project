@@ -31,21 +31,23 @@
                 <input class="mx-3 btn btn-danger" type="submit" value="Delete">
             </form>
         </div>
-    </div>
-    <% if (post.comments.length > 0) { %>
-    <div class="comments-show-div">
-        <% for (let i = 0; i < post.comments.length; i++) { %>
-            <p>
-                <%=post.comments[i]%>
-            </p>
-        <% } %>
-    </div>
-    <% } %>
-    <div class="comments-submit-div">
-        <form action="/main/<%=post.id%>/comments?_method=PUT" method="POST">
-            <textarea name="comments" id="" cols="40" rows="5"></textarea>
-            <input type="submit" value="Comment">
-        </form>
+        <!-- comments section -->
+        <h3 class="mt-4 text-center">Comments</h3>
+        <% if (post.comments.length > 0) { %>
+        <div class="comments-section">
+            <div class="comments-show-div">
+                <% for (let i = 0; i < post.comments.length; i++) { %>
+                    <p class="text-center">
+                        <%=post.comments[i]%>
+                    </p>
+                <% } %>
+            </div>
+            <% } %>
+            <form class="mt-4 comments-submit-form" action="/main/<%=post.id%>/comments?_method=PUT" method="POST">
+                <textarea name="comments" id="" cols="40" rows="5"></textarea>
+                <input class="mt-3 btn btn-light comments-btn" type="submit" value="Comment">
+            </form>
+        </div>
     </div>
 </body>
 </html>
