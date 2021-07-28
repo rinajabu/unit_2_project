@@ -30,5 +30,6 @@ Things to Work On:
     - made a separate route that acts as both a show route and a put route, it shows the posts description and also adds one to the view property at the same time
 - attempting to check for existing username when user tries to sign up for first time
     - got the check for existing username to work!; had to comment out the initial if statement giving me the error message, to get the foundUsername message to pop up
+- trying to add comment box functionality, cannot get it to work so far
 
 

@@ -32,5 +32,20 @@
             </form>
         </div>
     </div>
+    <% if (post.comments.length > 0) { %>
+    <div class="comments-show-div">
+        <% for (let i = 0; i < post.comments.length; i++) { %>
+            <p>
+                <%=post.comments[i]%>
+            </p>
+        <% } %>
+    </div>
+    <% } %>
+    <div class="comments-submit-div">
+        <form action="/main/<%=post.id%>?_method=PUT" method="POST">
+            <textarea name="comments" id="" cols="40" rows="5"></textarea>
+            <a href="/main/<%=post.id%>/comments"><input type="button" value="Comment"></a>
+        </form>
+    </div>
 </body>
 </html>

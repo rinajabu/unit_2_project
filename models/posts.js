@@ -5,7 +5,8 @@ const postSchema = new mongoose.Schema(
         title: { type: String, required: true },
         img: String,
         thoughts: String,
-        views: { type: Number, default: 0}
+        views: { type: Number, default: 0},
+        comments: [String]
     },
     { timestamps: true }
 )

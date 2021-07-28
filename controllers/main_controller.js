@@ -71,11 +71,30 @@ main.get('/:id/edit', authenticated, (req, res) => {
     })
 })
 
+///// comments route /////
+main.put('/:id/comments', authenticated, (req, res) => {
+    // res.send('comment');
+    // console.log(req.body);
+    Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost) => {
+        // updatedPost.comments.push(req.body.comments);
+        // console.log(updatedPost);
+        // res.send(updatedPost);
+        res.redirect(`/main/${req.params.id}`);
+        // res.render(
+        //     'show.ejs',
+        //     {
+        //         post: updatedPost,
+        //         currentUser: req.session.currentUser
+        //     }
+        // )
+    })
+})
+
 ///// view count route /////
 main.get('/:id/:views', authenticated, (req, res) => {
     // console.log(req.params.id);
     Post.findByIdAndUpdate(req.params.id, { $inc: {views: 1} }, { new: true }, (err, foundPost) => {
-        console.log(foundPost);
+        // console.log(foundPost);
         res.render(
             'show.ejs',
             {
