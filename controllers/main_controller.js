@@ -73,8 +73,6 @@ main.get('/:id/edit', authenticated, (req, res) => {
 
 ///// comments route /////
 main.put('/:id/comments', authenticated, (req, res) => {
-    // res.send('comment');
-    // console.log(req.body);
     Post.findById(req.params.id, (err, updatedPost) => {
         updatedPost.comments.push(req.body.comments);
         updatedPost.save(() => {
