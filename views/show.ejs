@@ -42,9 +42,9 @@
     </div>
     <% } %>
     <div class="comments-submit-div">
-        <form action="/main/<%=post.id%>?_method=PUT" method="POST">
+        <form action="/main/<%=post.id%>/comments?_method=PUT" method="POST">
             <textarea name="comments" id="" cols="40" rows="5"></textarea>
-            <a href="/main/<%=post.id%>/comments"><input type="button" value="Comment"></a>
+            <input type="submit" value="Comment">
         </form>
     </div>
 </body>

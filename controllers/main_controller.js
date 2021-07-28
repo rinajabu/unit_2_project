@@ -75,11 +75,14 @@ main.get('/:id/edit', authenticated, (req, res) => {
 main.put('/:id/comments', authenticated, (req, res) => {
     // res.send('comment');
     // console.log(req.body);
-    Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPost) => {
-        // updatedPost.comments.push(req.body.comments);
+    Post.findById(req.params.id, (err, updatedPost) => {
+        updatedPost.comments.push(req.body.comments);
+        updatedPost.save(() => {
+            res.redirect(`/main/${req.params.id}`);
+        })
         // console.log(updatedPost);
         // res.send(updatedPost);
-        res.redirect(`/main/${req.params.id}`);
+        
         // res.render(
         //     'show.ejs',
         //     {
@@ -136,18 +139,21 @@ main.get('/plant/some/seeds', (req, res) => {
                 img: 'https://c.shld.net/rpx/i/s/i/spin/image/spin_prod_159492601?',
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
+                comments: [],
             },
             {
                 title: 'Hiked an awesome trail',
                 img: 'https://s27363.pcdn.co/wp-content/uploads/2019/10/Landmannalaugar.jpg.optimal.jpg',
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
+                comments: [],
             },
             {
                 title: 'Went skydiving for the first time!',
                 img: 'https://www.wellandgood.com/wp-content/uploads/2018/01/maria-fernanda-gonzalez-unsplash.jpg',
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
+                comments: [],
             },
         ],
         (err, data) => {
