@@ -14,14 +14,17 @@
             <input class="form-control" id="colFormLabel" type="text" name="username" required/>
         </div>
         <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="password">Password:</label>
+            <label class="col-sm-2 col-form-label" for="password">Password</label>
             <input class="form-control" id="colFormLabel" type="password" name="password" />
         <br>
         </div>
         <input id="new-btn" class="mb-2 btn btn-primary" type="submit" value="Submit">
-    <form>
-    <p>
+        <p>
         New user? Click sign up, to get started! <a href="/users/new">Sign Up</a>
-    </p>
+        </p>
+    </form>
+    <footer class="position-absolute bottom-0 start-50 translate-middle-x card-footer text-muted" style="width: 100%;">
+        <%- include('../partials/footer.ejs') %>
+    </footer>
 </body>
 </html>
