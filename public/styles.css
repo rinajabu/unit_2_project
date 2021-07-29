@@ -57,8 +57,20 @@ textarea {
     margin: 0;
 }
 
-.view-memory-div {
+.view-memory-div, .like-btn {
         margin: auto 0;
+}
+
+.like-img {
+    width: 35px;
+    background: ghostwhite;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.like-img:hover {
+    background-color: green;
+    box-shadow: 0 0 8px black;
 }
 
 /* FOOTER STYLING */

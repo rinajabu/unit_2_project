@@ -97,7 +97,7 @@ main.get('/:id/:views', authenticated, (req, res) => {
 ///// likes route /////
 main.get('/:id/likes/:likeCount', authenticated, (req, res) => {
     Post.findByIdAndUpdate(req.params.id, { $inc: {likes: 1} }, { new: true }, (err, foundPost) => {
-        res.redirect('/main')
+        res.redirect('/main');
     })
 })
 
@@ -132,6 +132,7 @@ main.get('/plant/some/seeds', (req, res) => {
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
                 comments: [],
+                likes: 0,
             },
             {
                 title: 'Hiked an awesome trail',
@@ -139,6 +140,7 @@ main.get('/plant/some/seeds', (req, res) => {
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
                 comments: [],
+                likes: 0,
             },
             {
                 title: 'Went skydiving for the first time!',
@@ -146,6 +148,7 @@ main.get('/plant/some/seeds', (req, res) => {
                 thoughts: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam, ipsum quaerat officiis, qui, tempora sequi numquam minus doloribus possimus consectetur. Commodi amet suscipit fugiat at. Sunt aut officia dolore beatae velit exercitationem mollitia nisi, vel vero placeat, nihil eligendi quisquam. Amet consequuntur accusantium repellat eveniet fuga porro non ipsam voluptatibus nostrum velit corporis ipsa ab iure, voluptatem sed iste qui, sint ea numquam quis? Numquam facilis illo nobis eius.',
                 views: 0,
                 comments: [],
+                likes: 0,
             },
         ],
         (err, data) => {
