@@ -5,6 +5,7 @@ body {
 
 #form-container {
     width: 60%;
+    margin-bottom: 115px;
 }
 
 textarea {
@@ -58,6 +59,20 @@ textarea {
 
 .view-memory-div {
         margin: auto 0;
+}
+
+/* FOOTER STYLING */
+
+.linkedin-logo, .github-logo {
+    width: 50px;
+}
+
+.social-media-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 150px;
+    margin: 0 auto;
 }
 
 /*//////////////// SHOW PAGE STYLING ////////////////*/

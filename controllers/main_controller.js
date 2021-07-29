@@ -78,24 +78,12 @@ main.put('/:id/comments', authenticated, (req, res) => {
         updatedPost.save(() => {
             res.redirect(`/main/${req.params.id}`);
         })
-        // console.log(updatedPost);
-        // res.send(updatedPost);
-        
-        // res.render(
-        //     'show.ejs',
-        //     {
-        //         post: updatedPost,
-        //         currentUser: req.session.currentUser
-        //     }
-        // )
     })
 })
 
 ///// view count route /////
 main.get('/:id/:views', authenticated, (req, res) => {
-    // console.log(req.params.id);
     Post.findByIdAndUpdate(req.params.id, { $inc: {views: 1} }, { new: true }, (err, foundPost) => {
-        // console.log(foundPost);
         res.render(
             'show.ejs',
             {
