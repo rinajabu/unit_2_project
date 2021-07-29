@@ -21,12 +21,17 @@
                 <%=posts[i].createdAt.toDateString()%>
             </p>
             <p>
-                Viewed: <%=posts[i].views%> | Comments: <%=posts[i].comments.length%>
+                Viewed: <%=posts[i].views%> | Comments: <%=posts[i].comments.length%> | Likes: <%=posts[i].likes%>
             </p>
         </div>
         <div class="view-memory-div">
             <a href="/main/<%=posts[i].id%>/<%=posts[i].views%>">
                 <input class="btn btn-primary" type="button" value="View Memory">
+            </a>
+        </div>
+        <div class="like-btn">
+            <a href="/main/<%=posts[i].id%>/likes/<%=posts[i].likes%>">
+                <input class="btn btn-primary" type="button" value="Like">
             </a>
         </div>
     </div>

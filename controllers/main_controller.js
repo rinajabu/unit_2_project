@@ -94,6 +94,12 @@ main.get('/:id/:views', authenticated, (req, res) => {
     })
 })
 
+///// likes route /////
+main.get('/:id/likes/:likeCount', authenticated, (req, res) => {
+    Post.findByIdAndUpdate(req.params.id, { $inc: {likes: 1} }, { new: true }, (err, foundPost) => {
+        res.redirect('/main')
+    })
+})
 
 ///// put route /////
 main.put('/:id', (req, res) => {
