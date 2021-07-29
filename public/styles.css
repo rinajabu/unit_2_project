@@ -29,7 +29,7 @@ textarea {
 
 .index-div {
     display: flex;
-    width: 55%;
+    width: 70%;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 2em auto;
@@ -135,10 +135,6 @@ textarea {
 
 @media (max-width: 1300px) {
 
-    .index-div {
-        width: 60%;
-    }
-
     .index-img {
         margin: 0 auto 1em;
         display: block;
@@ -151,10 +147,6 @@ textarea {
 }
 
 @media (max-width: 1088px) {
-
-    .index-div {
-        width: 60%;
-    }
 
     .index-img-div {
         width: 80%;
