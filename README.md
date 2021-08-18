@@ -2,7 +2,7 @@
 
 link to project:
 
-https://unit-2-project-rina.herokuapp.com/main
+[Memory Lane](https://unit-2-project-rina.herokuapp.com/main)
 
 User Stories:
 - user must log in or make an account to access the main page
